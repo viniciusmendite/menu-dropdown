@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #5f5f5f;
+}
+
+.menu {
+  width: 100%;
+  height: 50px;
+  background-color: #222;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.menu ul {
+  list-style: none;
+  position: relative
+}
+
+.menu ul li {
+  width: 150px;
+  float: left
+}
+
+.menu a {
+  padding: 15px;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  background-color: #222;
+  color: #fff
+}
+
+.menu ul ul {
+  position: absolute;
+  visibility: hidden;
+}
+
+.menu ul li:hover ul {
+  visibility: visible;
+}
+
+.menu a:hover {
+  background-color: #999;
+  color: #555
+}
+
+.menu ul ul li a {
+  background-color: #069;
+}
+
+.menu ul ul li {
+  float: none;
+  border-bottom: solid 1px #ccc
+}
+
+label[for="bt_menu"] {
+  padding: 5px;
+  background-color: #222;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+}
+
+#bt_menu {
+  display: none;
+}
+
+label[for="bt_menu"] {
+  display: none
+}
+
+@media(max-width: 800px) {
+  label[for="bt_menu"] {
+    display: block;
+  }
+  #bt_menu:checked~.menu {
+    margin-left: 0;
+  }
+  .menu {
+    margin-top: 5px;
+    margin-left: -100%;
+    transition: all .4s;
+  }
+  .menu ul li {
+    width: 100%;
+    float: none;
+  }
+  .menu ul ul {
+    position: static;
+    overflow: hidden;
+    max-height: 0;
+    transition: all .4s;
+  }
+  .menu ul li:hover ul {
+    height: auto;
+    max-height: 200px
+  }
+}
